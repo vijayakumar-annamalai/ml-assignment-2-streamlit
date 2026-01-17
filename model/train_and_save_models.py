@@ -19,8 +19,19 @@ TARGET_COL = "default payment next month"
 ARTIFACT_DIR = os.path.join("model", "artifacts")
 
 
+# def load_dataset():
+#     dataset = pd.read_excel(DATA_FILE, header=1)
+#     X = dataset.drop(columns=[TARGET_COL])
+#     y = dataset[TARGET_COL]
+#     return X, y
+
 def load_dataset():
     dataset = pd.read_excel(DATA_FILE, header=1)
+
+    # Drop ID column if present 
+    if "ID" in dataset.columns:
+        dataset = dataset.drop(columns=["ID"])
+
     X = dataset.drop(columns=[TARGET_COL])
     y = dataset[TARGET_COL]
     return X, y
