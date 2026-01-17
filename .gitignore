@@ -1,0 +1,5 @@
+*.xls
+*.xlsx
+model/artifacts/
+__pycache__/
+.venv/
