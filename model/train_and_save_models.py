@@ -79,9 +79,21 @@ def main():
     joblib.dump(nb, os.path.join(ARTIFACT_DIR, "naive_bayes.pkl"))
 
     # 5) Random Forest
-    rf = RandomForestClassifier(n_estimators=200, random_state=42, n_jobs=-1)
+    # rf = RandomForestClassifier(n_estimators=200, random_state=42, n_jobs=-1)
+    # rf.fit(X_train, y_train)
+    # joblib.dump(rf, os.path.join(ARTIFACT_DIR, "random_forest.pkl"))
+
+    # 5) Random Forest (lightweight for Streamlit deployment)
+    rf = RandomForestClassifier(
+        n_estimators=100,      # reduced from 200
+        max_depth=12,          # limit tree depth
+        min_samples_leaf=10,   # reduce overfitting + size
+        random_state=42,
+        n_jobs=-1
+    )
     rf.fit(X_train, y_train)
     joblib.dump(rf, os.path.join(ARTIFACT_DIR, "random_forest.pkl"))
+
 
     # 6) XGBoost
     xgb = XGBClassifier(
