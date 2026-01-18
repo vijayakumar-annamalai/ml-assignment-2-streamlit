@@ -68,7 +68,12 @@ def compute_metrics(y_true, y_pred, y_score):
 # UI - App
 
 st.title("ML Assignment 2 — Classification Models (Streamlit App)")
-st.caption("Loads pretrained models, supports test.csv download, CSV upload, predictions, and evaluation metrics.")
+st.subheader("UCI – Credit Card Default")
+# st.caption("Loads pretrained models, supports test.csv download, CSV upload, predictions, and evaluation metrics.")
+st.caption(
+    "Dataset: UCI Credit Card Default | "
+    "Loads pretrained models, supports test.csv download, CSV upload, predictions, and evaluation metrics."
+)
 
 col_left, col_right = st.columns([1, 2])
 
