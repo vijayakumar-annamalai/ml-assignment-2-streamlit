@@ -103,7 +103,8 @@ Streamlit App Link:
 
 7. Repository Structure
 
-ml-assignment-2/
+
+```ml-assignment-2/
 │-- app.py
 │-- requirements.txt
 │-- README.md
@@ -116,7 +117,7 @@ ml-assignment-2/
     ├── evaluate_models.py
     ├── export_test_csv.py
     └── artifacts/
-        └── *.pkl
+        └── *.pkl```
 
 8. Execution Environment
 
